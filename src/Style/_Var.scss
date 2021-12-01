@@ -1,0 +1,211 @@
+$white:#ffffff;
+$light:#faf9fc;
+
+$black: #000000;
+$dark:#181443;
+$text-color:#625d7e;
+
+$primary-tint: hsl(245, 100%, 70%);
+$primary: hsl(245, 100%, 65%);
+$primary-shade: hsl(245, 100%, 60%);
+
+$blue-light:rgba(6, 82, 221, 0.2);
+$blue:rgba(6, 82, 221, 1.0);
+
+$red-light:rgba(234, 32, 39, 0.2);
+$red:rgba(234, 32, 39, 1.0);
+
+$yellow-light:rgba(255, 195, 18, 0.2);
+$yellow:rgba(255, 195, 18, 1.0);
+
+$green-light:rgba(0, 148, 50, 0.2);
+$green:rgba(0, 148, 50, 1.0);
+
+$phone-sm:320px;
+$phone-md:480px;
+$tablet-sm:570px;
+$tablet-lg:760px;
+$desktop-sm:992px;
+$desktop-lg: 1280px;
+
+@mixin font-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+@mixin font-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+@mixin font-md {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@mixin font-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@mixin font-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@mixin font-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@mixin font-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@mixin font-4lg {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+@mixin font-5lg {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+$gap-xs: 0.5rem;
+$gap-sm: 0.75rem;
+$gap-md: 1rem;
+$gap-lg: 1.5rem;
+$gap-xl: 2rem;
+$gap-2xl: 3rem;
+$gap-3xl: 4rem;
+
+$shadow-xs: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$shadow-sm: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+$shadow-md: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+$input-shadow:rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+$rounded-sm: 0.20rem;
+$rounded-md: 0.35rem;
+$rounded-lg: 0.50rem;
+$rounded-xl: 0.75rem;
+$rounded-2xl: 1rem;
+$rounded-3xl: 2rem;
+$rounded-full: 9999px;
+
+$z-10: 10;
+$z-20: 20;
+$z-50: 50;
+$z-max: 99999;
+
+@mixin transition($property:all,$time:0.3s,$mode:ease-in-out){
+  -webkit-transition: $property $time $mode;
+-moz-transition: $property $time $mode;
+-ms-transition: $property $time $mode;
+-o-transition: $property $time $mode;
+transition: $property $time $mode;
+}
+
+@mixin abs-position($top:inherit, $right:inherit, $bottom:inherit, $left:inherit) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin flex-center($jc:center, $ai:center, $dir:row) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin full-size {
+  width: 100%;
+  height: 100%;
+}
+
+
+@mixin phone-sm {
+  @media only screen and (min-width: $phone-sm) {
+    @content;
+  }
+}
+
+@mixin phone-md {
+  @media only screen and (min-width: $phone-md) {
+    @content;
+  }
+}
+
+@mixin tablet-sm {
+  @media only screen and (min-width: $tablet-sm) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media only screen and (min-width: $tablet-lg) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media only screen and (min-width: $desktop-sm) {
+    @content;
+  }
+}
+
+@mixin desktop-md {
+  @media only screen and (min-width: $desktop-md) {
+    @content;
+  }
+}
+
+@font-face {
+  font-family: 'Yekan';
+  src: url(../Assets/Fonts/Yekan/Yekan.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Estedad-Medium';
+  src: url(../Assets/Fonts/Estedad/Estedad-Medium.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Estedad-Bold';
+  src: url(../Assets/Fonts/Estedad/Estedad-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Estedad-Black';
+  src: url(../Assets/Fonts/Estedad/Estedad-Black.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+$yekan : 'Yekan';
+$estedad-medium : 'Estedad-Medium';
+$estedad-bold : 'Estedad-Bold';
+$estedad-black : 'Estedad-Black';
