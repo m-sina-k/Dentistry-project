@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React , {useState} from 'react';
 
-const context = React.createContext();
+const appContext = React.createContext();
 
-export const AppProvider = ({ children }) => {
-  return (
-    <context.Provider>
-      {children}
-    </context.Provider>
-  );
-};
+export const AppProvider = ({children})=>{
+    const [showBackdrop,setShowBackdrop] = useState(false)
+    const [showSidebarMenu,setShowSidebarMenu] = useState(false)
+    
+    return (
+        <appContext.Provider value={{
+            showBackdrop,
+            setShowBackdrop,
+            showSidebarMenu,
+            setShowSidebarMenu,
+        }}>
+            {children}
+        </appContext.Provider>
+    )
+}
 
-// custom hook to distructure context's values
-export const useGlobalContext = () => {
-  return React.useContext(context);
-};
+export const useGlobalContext = ()=>{
+    return React.useContext(appContext);
+}

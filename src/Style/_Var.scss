@@ -1,6 +1,6 @@
 $white:#ffffff;
 $light:#faf9fc;
-
+$gray:#efeef6;
 $black: #000000;
 $dark:#181443;
 $text-color:#625d7e;
@@ -28,51 +28,17 @@ $tablet-lg:760px;
 $desktop-sm:992px;
 $desktop-lg: 1280px;
 
-@mixin font-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
+$font-xs: 0.75rem;
+$font-sm: 0.875rem;
+$font-md: 1rem;
+$font-lg: 1.125rem;
+$font-xl: 1.25rem;
+$font-2xl: 1.5rem;
+$font-3xl: 1.875rem;
+$font-4xl: 2.25rem;
+$font-5xl: 3rem;
 
-@mixin font-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-@mixin font-md {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-@mixin font-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-@mixin font-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-@mixin font-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-@mixin font-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-@mixin font-4lg {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-@mixin font-5lg {
-  font-size: 3rem;
-  line-height: 1;
-}
-
+$gap-xxs: 0.25rem;
 $gap-xs: 0.5rem;
 $gap-sm: 0.75rem;
 $gap-md: 1rem;
@@ -100,7 +66,7 @@ $z-20: 20;
 $z-50: 50;
 $z-max: 99999;
 
-@mixin transition($property:all,$time:0.3s,$mode:ease-in-out){
+@mixin transition($property:all,$time:0.3s,$mode:ease){
   -webkit-transition: $property $time $mode;
 -moz-transition: $property $time $mode;
 -ms-transition: $property $time $mode;
@@ -122,7 +88,7 @@ transition: $property $time $mode;
   white-space: nowrap;
 }
 
-@mixin flex-center($jc:center, $ai:center, $dir:row) {
+@mixin flex($jc:center, $ai:center, $dir:row) {
   display: flex;
   flex-direction: $dir;
   align-items: $ai;
@@ -142,37 +108,37 @@ transition: $property $time $mode;
 
 
 @mixin phone-sm {
-  @media only screen and (min-width: $phone-sm) {
+  @media only screen and (max-width: $phone-sm) {
     @content;
   }
 }
 
 @mixin phone-md {
-  @media only screen and (min-width: $phone-md) {
+  @media only screen and (max-width: $phone-md) {
     @content;
   }
 }
 
 @mixin tablet-sm {
-  @media only screen and (min-width: $tablet-sm) {
+  @media only screen and (max-width: $tablet-sm) {
     @content;
   }
 }
 
 @mixin tablet-lg {
-  @media only screen and (min-width: $tablet-lg) {
+  @media only screen and (max-width: $tablet-lg) {
     @content;
   }
 }
 
 @mixin desktop-sm {
-  @media only screen and (min-width: $desktop-sm) {
+  @media only screen and (max-width: $desktop-sm) {
     @content;
   }
 }
 
 @mixin desktop-md {
-  @media only screen and (min-width: $desktop-md) {
+  @media only screen and (max-width: $desktop-md) {
     @content;
   }
 }

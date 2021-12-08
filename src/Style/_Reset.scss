@@ -16,9 +16,12 @@ p{
     color: $text-color;
 }
 
-a,a:hover{
+a{
     color:inherit;
     text-decoration:none;
+    &:hover{
+        color:inherit ;
+    }
 }
 
 ul,ol{
