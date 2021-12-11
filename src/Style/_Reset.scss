@@ -19,6 +19,7 @@ p{
 a{
     color:inherit;
     text-decoration:none;
+    display: inline-block;
     &:hover{
         color:inherit ;
     }
@@ -27,9 +28,23 @@ a{
 ul,ol{
     padding: 0;
     list-style: none;
+    margin: 0;
 }
-
+img{
+    max-width: 100%;
+}
 input,button,textarea,input:focus,button:focus,textarea:focus{
     border:none;
     outline:none;
+}
+h1,h2,h3,h4,h5,h5{
+    font-family: $estedad-bold;
+    color: $dark;
+    margin-bottom: 0;
+}
+h1{
+    font-size: $font-4xl;
+}
+h2{
+    font-size: $font-2xl;
 }

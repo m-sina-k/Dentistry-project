@@ -1,4 +1,4 @@
-.backdrop{
+.backdrop {
     display: block;
     position: fixed;
     top: 0;
@@ -9,12 +9,14 @@
     @include transition(opacity, 0.6s, ease);
     opacity: 0;
     z-index: -1;
-    &--active{
+
+    &--active {
         z-index: $z-50;
         opacity: 1;
     }
 }
-.dropdown-bg{
+
+.dropdown-bg {
     display: block;
     position: fixed;
     top: 0;
@@ -24,37 +26,64 @@
     z-index: $z-50;
     background-color: transparent;
 }
-.button{
-    @include transition(all,0.4s);
+
+.button {
+    @include transition(all, 0.4s);
     box-shadow: 0 2px 3px 0 rgba($color: $dark, $alpha: 0.2);
     border-radius: $rounded-xl;
-    padding:$gap-sm $gap-md;
+    padding: $gap-sm $gap-md;
     font-size: $font-md;
-    &:hover{
+
+    &:hover {
         transform: translateY(-3px);
-        
     }
 }
-.button--primary{
+
+.button--primary {
     background-color: $primary;
     color: $light;
-    &:hover{
+
+    &:hover {
         color: $light !important;
         box-shadow: 0 2px 18px 0 rgba($color: $primary-shade, $alpha: 0.2);
     }
 }
-.button--secondary{
+
+.button--secondary {
     border: 1px solid $gray;
     background-color: $white;
     color: $dark;
-    &:hover{
+
+    &:hover {
         box-shadow: 0 2px 12px 0 rgba($color: $dark, $alpha: 0.2);
     }
 }
 
-@include tablet-lg{
-    .button{
+@include tablet-lg {
+    .button {
         padding: $gap-xs $gap-sm;
         font-size: $font-sm;
+    }
+}
+
+
+.border-bottom-link {
+    color: $primary-shade;
+font-family: $estedad-bold;
+    &::after {
+        @include transition(all, 0.4s, ease);
+        content: '';
+        margin-top: 3px;
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: $primary-shade;
+    }
+
+    &:hover {
+        color: $primary-shade;
+      &::after{
+          width: 100%;
+      }
     }
 }

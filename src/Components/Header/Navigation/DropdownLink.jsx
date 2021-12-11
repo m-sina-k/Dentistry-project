@@ -37,7 +37,6 @@ function DropdownLink({ text, subMenuId, subMenus, url, id }) {
       {showDropdownBg && <div className="dropdown-bg"></div>}
       <NavLink
         to={url}
-        key={id}
         exact
         className="header__nav__link"
         activeClassName="header__nav__link--active"

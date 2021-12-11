@@ -137,8 +137,8 @@ transition: $property $time $mode;
   }
 }
 
-@mixin desktop-md {
-  @media only screen and (max-width: $desktop-md) {
+@mixin desktop-lg {
+  @media only screen and (max-width: $desktop-lg) {
     @content;
   }
 }

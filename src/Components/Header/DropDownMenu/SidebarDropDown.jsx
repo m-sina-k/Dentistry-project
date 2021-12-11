@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 function SidebarDropDown({ link, links, activeDropdown,closeSidebarMenu }) {
   return (
@@ -13,10 +14,9 @@ function SidebarDropDown({ link, links, activeDropdown,closeSidebarMenu }) {
       {links.map((link) => {
         const { id, text, url } = link;
         return (
-          <li>
+          <li key={uuidv4()}>
             <NavLink
               to={url}
-              key={id}
               className="dropdown__link"
               activeClassName="dropdown__link--active"
               exact

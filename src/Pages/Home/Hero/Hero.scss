@@ -1,0 +1,151 @@
+@import '../../../Style/Var';
+
+.hero {
+    position: relative;
+
+    &__block {
+        display: flex;
+        &--text {
+            width: max-content;
+            padding: 37% 15% 0 0;
+
+            .heading__container {
+                display: flex;
+                max-width: 80%;
+
+                .heading__highlight {
+                    font: $font-5xl $estedad-black;
+                    color: $primary-tint;
+                }
+
+                .heading {
+                    font: $font-4xl $estedad-bold;
+                }
+            }
+
+            .description {
+                margin: $gap-xl 0;
+                max-width: 80%;
+            }
+
+            .button__container {
+                .button {
+                    padding: $gap-sm $gap-xl;
+                    font-size: $font-xl;
+
+                    &:first-child {
+                        margin-left: $gap-lg;
+                    }
+                }
+            }
+        }
+       
+    }
+}
+
+@include desktop-lg {
+    .hero {
+        &__block {
+            &--text {
+                padding: 25% $gap-lg 0 $gap-xs;
+
+                .heading__container {
+                    max-width: 90%;
+                }
+
+                .description {
+                    max-width: 95%;
+                }
+            }
+            &--image{
+                width: 100%;
+                .image__container{
+                    .hero__image{
+                        width: 100%;
+                        max-height: 850px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include desktop-sm {
+    .hero {
+        &__block {
+            &--text {
+                padding: $gap-xl 0;
+                width: 100%;
+                @include flex(center, center, column);
+                text-align: center;
+
+                .heading__container {
+                    width: 450px;
+                    max-width: 90%;
+                }
+
+                .description {
+                    margin: $gap-md 0;
+                    width: 500px;
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@include tablet-lg {
+    .hero {
+        &__block {
+            &--text {
+                .heading__container {
+                    .heading__highlight {
+                        font: $font-4xl $estedad-black;
+                    }
+
+                    .heading {
+                        font: $font-3xl $estedad-bold;
+                    }
+                }
+
+                .button__container {
+                    .button {
+                        padding: $gap-xs $gap-lg;
+                        font-size: $font-md;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include phone-md {
+    .hero {
+        &__block {
+            &--text {
+                .heading__container {
+                    justify-content: center;
+                    .heading__highlight {
+                        font: $font-2xl $estedad-black;
+                    }
+
+                    .heading {
+                        text-align: center;
+                        font: $font-xl $estedad-bold;
+                    }
+                }
+
+                .description {
+                    font-size: $font-sm;
+                }
+
+                .button__container {
+                    .button {
+                        padding: $gap-xs $gap-md;
+                        font-size: $font-sm;
+                    }
+                }
+            }
+        }
+    }
+}

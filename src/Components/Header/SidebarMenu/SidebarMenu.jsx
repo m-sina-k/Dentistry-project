@@ -5,7 +5,7 @@ import SidebarDropDown from "../DropDownMenu/SidebarDropDown";
 import { useGlobalContext } from "../../../Context/context";
 import useWindowDimensions from "./../../../hooks/useWindowDimensions";
 import { useClickOutside } from "../../../hooks/useClickOutside";
-
+import { v4 as uuidv4 } from 'uuid';
 /* --------------------------------- styles --------------------------------- */
 import logo from "../../../Assets/Images/logo.png";
 import { IoMdClose } from "react-icons/io";
@@ -64,14 +64,13 @@ function SidebarMenu() {
 
       <section className="sidebar-menu__links-container">
         {links.map((link) => {
-          const { id, text, url, subMenus, subMenuId } = link;
+          const { text, url, subMenus, subMenuId } = link;
           return (
-            <div className="sidebar-link-container">
+            <div className="sidebar-link-container" key={uuidv4()}>
               <NavLink
                 className="sidebar-link"
                 activeClassName="sidebar-link--active"
                 exact
-                key={id}
                 to={url}
                 onClick={
                   subMenus
@@ -94,6 +93,7 @@ function SidebarMenu() {
                   links={subMenus}
                   activeDropdown={activeDropdown}
                   closeSidebarMenu={closeSidebarMenu}
+                  key={uuidv4()}
                 />
               ) : null}
             </div>
