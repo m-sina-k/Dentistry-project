@@ -1,3 +1,7 @@
+.page__container {
+    padding: $gap-sm $gap-3xl;
+}
+
 .backdrop {
     display: block;
     position: fixed;
@@ -59,17 +63,10 @@
     }
 }
 
-@include tablet-lg {
-    .button {
-        padding: $gap-xs $gap-sm;
-        font-size: $font-sm;
-    }
-}
-
-
 .border-bottom-link {
     color: $primary-shade;
-font-family: $estedad-bold;
+    font-family: $estedad-bold;
+
     &::after {
         @include transition(all, 0.4s, ease);
         content: '';
@@ -82,8 +79,63 @@ font-family: $estedad-bold;
 
     &:hover {
         color: $primary-shade;
-      &::after{
-          width: 100%;
-      }
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+/* ------------------------ swiper js  button's style ----------------------- */
+.swiper-button-next,
+.swiper-button-prev {
+    @include transition(all,0.3s,ease-in);
+    top: 35%;
+    background-color: $primary;
+    box-shadow: 0 0 15px rgba($color: $dark, $alpha: 0.1);
+    font-size: 10px;
+    width: 60px;
+    height: 60px;
+    padding: $gap-xl;
+    border-radius: $rounded-full;
+    &::after {
+        color: $white;
+        @include transition(all,0.3s,ease-in);
+    }
+    
+    &:hover {
+        border: 1px solid $primary;
+        background-color: $white;
+       
+        &::after{
+            color: $primary;
+
+        }
+    }
+
+}
+
+.swiper-button-next::after {
+    content: ' \21BC' !important;
+}
+
+.swiper-button-prev::after {
+    content: ' \21C1' !important;
+}
+
+@include desktop-sm {
+    .page__container {
+        padding: $gap-sm $gap-2xl;
+    }
+}
+
+@include tablet-lg {
+    .page__container {
+        padding: $gap-sm $gap-sm;
+    }
+
+    .button {
+        padding: $gap-xs $gap-sm;
+        font-size: $font-sm;
     }
 }

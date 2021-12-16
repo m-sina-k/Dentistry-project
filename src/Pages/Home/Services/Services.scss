@@ -1,0 +1,34 @@
+@import '../../../Style/Var';
+
+.services {
+    padding: $gap-md $gap-xxs;
+
+    &__card {
+        @include transition(all, 0.3s, ease-in);
+        background-color: $white;
+        box-shadow: 0 2px 8px 0 rgba($color:$dark, $alpha:0.1), 0 1px 13px 0 rgba($color:$dark, $alpha:0.1);
+        border-radius: $rounded-3xl;
+        overflow: hidden;
+        border: 0.1px solid transparent;
+
+        .image__container {
+            .service__image {
+                width: 100%;
+            }
+        }
+
+        .content {
+            padding: $gap-md $gap-lg $gap-xl;
+
+            .service__description {
+                margin: $gap-sm 0;
+                max-width: 95%;
+            }
+        }
+
+        &:hover {
+            border: 2px solid $primary;
+            transform: translateY(-10px);
+        }
+    }
+}

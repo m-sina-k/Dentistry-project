@@ -1,11 +1,15 @@
-import React from 'react'
-import Hero from './Hero/Hero'
+import React from "react";
+import Hero from "./Hero/Hero";
+import Services from "./Services/Services";
 function Home() {
-    return (
-        <div>
-            <Hero/>
-        </div>
-    )
+  return (
+    <div className="home__wrapper">
+      <Hero />
+      <main className="page__container">
+        <Services />
+      </main>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

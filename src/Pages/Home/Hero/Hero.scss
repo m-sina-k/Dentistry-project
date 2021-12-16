@@ -2,9 +2,11 @@
 
 .hero {
     position: relative;
+    margin-bottom: 12rem;
 
     &__block {
         display: flex;
+
         &--text {
             width: max-content;
             padding: 37% 15% 0 0;
@@ -39,7 +41,7 @@
                 }
             }
         }
-       
+
     }
 }
 
@@ -57,10 +59,12 @@
                     max-width: 95%;
                 }
             }
-            &--image{
+
+            &--image {
                 width: 100%;
-                .image__container{
-                    .hero__image{
+
+                .image__container {
+                    .hero__image {
                         width: 100%;
                         max-height: 850px;
                     }
@@ -96,6 +100,8 @@
 
 @include tablet-lg {
     .hero {
+        margin-bottom: 22rem;
+
         &__block {
             &--text {
                 .heading__container {
@@ -125,6 +131,7 @@
             &--text {
                 .heading__container {
                     justify-content: center;
+
                     .heading__highlight {
                         font: $font-2xl $estedad-black;
                     }

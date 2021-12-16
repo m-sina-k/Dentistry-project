@@ -1,0 +1,70 @@
+@import '../../Style/Var';
+
+.heading__container {
+    padding: $gap-md 0;
+    margin-bottom: $gap-sm;
+
+    .subtitle {
+        font-family: $estedad-bold;
+        display: inline-block;
+        background-color: $white;
+        color: $primary;
+        margin-bottom: $gap-md;
+        padding: $gap-xs $gap-md;
+        border-radius: $rounded-md;
+        box-shadow: 0 1px 4px 0 rgba($color: $dark, $alpha: 0.3), 0 5px 15px 0 rgba($color: $dark, $alpha: 0.1);
+    }
+
+    .title {
+        max-width: 60%;
+    }
+}
+
+@include desktop-sm {
+    .heading__container {
+        @include flex(inherit, center, column);
+
+        .title {
+            max-width: 75%;
+            text-align: center;
+            font-size: $font-3xl;
+        }
+    }
+}
+
+@include tablet-lg {
+    .heading__container {
+        display: block;
+
+        .subtitle {
+            padding: $gap-xxs $gap-md;
+        }
+
+        .title {
+            text-align: right;
+            justify-self: flex-start;
+        }
+    }
+}
+
+@include tablet-sm {
+    .heading__container {
+        .subtitle {
+            padding: $gap-xxs $gap-md;
+            font-size: $font-sm;
+        }
+
+        .title {
+            font-size: $font-2xl;
+            max-width: 98%;
+        }
+    }
+}
+
+@include phone-md {
+    .heading__container {
+        .title {
+            font-size: $font-xl;
+        }
+    }
+}
