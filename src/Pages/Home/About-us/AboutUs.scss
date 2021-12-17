@@ -1,0 +1,102 @@
+@import '../../../Style/Var';
+
+.about-us {
+    background-color: $gray;
+    padding: $gap-3xl $gap-xxs;
+
+    &__row {
+        padding: $gap-lg 0;
+    }
+
+    &__image-container {
+        img {
+            border-radius: $rounded-2xl;
+            box-shadow: 0 0 15px rgba($color: $dark, $alpha: 0.3);
+        }
+
+        .parent-image__container {
+            position: relative;
+
+            img {
+                max-height: 550px;
+            }
+
+            .child-image__container {
+                position: absolute;
+                bottom: -120px;
+                left: 15%;
+
+                img {
+                    max-height: 300px;
+                }
+            }
+        }
+    }
+
+    &__text-container {
+        @include flex(center,flex-start,column);
+        .doctor {
+            @include flex(inherit, center);
+
+            .image__container {
+                width: 85px;
+                height: 85px;
+                border-radius: $rounded-full;
+                overflow: hidden;
+                margin-left: $gap-md;
+
+                .image {
+                    object-fit: cover;
+                }
+            }
+
+            .name {
+                font: $font-2xl $estedad-bold;
+                margin-bottom: $gap-xxs;
+            }
+        }
+
+        .about-us__button {
+            font: $font-lg $estedad-bold;
+            margin-top: $gap-lg;
+            padding: $gap-md $gap-xl;
+        }
+    }
+}
+
+
+@include desktop-sm {
+    .about-us {
+        &__image-container{
+            margin-bottom: 7rem;
+        }
+        &__text-container {
+            @include flex(inherit, center, column);
+        }
+    }
+}
+
+@include tablet-lg {
+    .about-us {
+        &__text-container {
+            display: block;
+
+            .about-us__button {
+                font: $font-md $estedad-bold;
+                margin-top: $gap-lg;
+                padding: $gap-sm $gap-lg;
+            }
+
+            .doctor {
+                .image__container {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .name {
+                    font-size: $font-lg;
+                }
+            }
+        }
+    }
+}

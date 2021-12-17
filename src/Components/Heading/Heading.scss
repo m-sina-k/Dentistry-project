@@ -9,7 +9,6 @@
         display: inline-block;
         background-color: $white;
         color: $primary;
-        margin-bottom: $gap-md;
         padding: $gap-xs $gap-md;
         border-radius: $rounded-md;
         box-shadow: 0 1px 4px 0 rgba($color: $dark, $alpha: 0.3), 0 5px 15px 0 rgba($color: $dark, $alpha: 0.1);
@@ -17,6 +16,7 @@
 
     .title {
         max-width: 60%;
+        margin: $gap-md 0 $gap-lg;
     }
 }
 
