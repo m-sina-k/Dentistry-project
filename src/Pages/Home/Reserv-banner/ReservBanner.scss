@@ -1,0 +1,46 @@
+@import '../../../Style/Var';
+
+.reserv-banner {
+    margin-top: $gap-xl;
+    overflow: hidden;
+    border-radius: $rounded-3xl;
+    box-shadow: 0 0 25px rgba($color: $dark, $alpha: 0.2);
+
+    &__text-container {
+        @include flex(center,flex-start,column);
+        background-color: $primary;
+        padding: 0 $gap-2xl !important;
+        .reserv-banner__text{
+            color: $white;
+            margin-bottom: $gap-xl;
+        }
+        .reserv-banner__button{
+            padding: $gap-sm $gap-xl;
+            font: $font-lg $estedad-bold;
+        }
+    }
+}
+
+@include desktop-sm{
+    .reserv-banner{
+        &__text-container{
+            .reserv-banner__text{
+                font-size: $font-2xl;
+                margin-bottom: $gap-lg;
+            }
+            .reserv-banner__button{
+                padding: $gap-xs $gap-lg;
+                font: $font-md $estedad-bold;
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+    .reserv-banner{
+        &__text-container{
+            padding: $gap-3xl $gap-2xl !important;
+        }
+    }
+}

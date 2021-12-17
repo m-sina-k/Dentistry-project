@@ -9,6 +9,7 @@
     }
 
     &__image-container {
+        padding-bottom: $gap-3xl;
         img {
             border-radius: $rounded-2xl;
             box-shadow: 0 0 15px rgba($color: $dark, $alpha: 0.3);
@@ -68,7 +69,7 @@
 @include desktop-sm {
     .about-us {
         &__image-container{
-            margin-bottom: 7rem;
+            margin-bottom: 5rem;
         }
         &__text-container {
             @include flex(inherit, center, column);

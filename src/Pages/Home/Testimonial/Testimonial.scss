@@ -1,0 +1,35 @@
+@import '../../../Style/Var';
+
+.testimonial {
+    padding: $gap-3xl $gap-xxs;
+
+    &__heading {
+        @include flex(inherit, center, column);
+        text-align: center;
+
+        .title {
+            text-align: center;
+            max-width: 470px;
+        }
+
+        .description {
+            max-width: 500px;
+        }
+    }
+
+    &__card {
+        .user__image-container {
+            .user__image {
+                border-radius: 32px;
+            }
+        }
+
+        .user__info {
+            text-align: center;
+
+            .user__name {
+                margin-bottom: $gap-sm;
+            }
+        }
+    }
+}
