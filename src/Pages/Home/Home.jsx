@@ -1,6 +1,7 @@
 import React from "react";
 import AboutUs from "./About-us/AboutUs";
 import Blog from "./Blog/Blog";
+import ContactUs from "./Contact-us/ContactUs";
 import Hero from "./Hero/Hero";
 import ReservBanner from "./Reserv-banner/ReservBanner";
 import Services from "./Services/Services";
@@ -18,6 +19,7 @@ function Home() {
         <ReservBanner/>
         <Blog/> 
       </main>
+      <ContactUs/>
     </div>
   );
 }

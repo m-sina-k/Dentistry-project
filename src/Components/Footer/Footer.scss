@@ -1,0 +1,77 @@
+@import '../../Style/Var';
+
+.footer {
+    padding: $gap-xl $gap-2xl $gap-sm;
+    background-color: $white;
+    border-top: 2px solid $gray;
+
+    .footer__block{
+       padding: 0 $gap-lg;
+    }
+    .newsletter {
+        &__heading {
+            .title {
+                max-width: 100%;
+                font-size: $font-2xl;
+            }
+        }
+
+        &__form {
+            position: relative;
+            .newsletter__input {
+                background-color: $gray;
+                width: 100%;
+                border: 2px solid rgba($color: $dark, $alpha: 0.1);
+                border-radius: $rounded-lg;
+                padding:$gap-md $gap-md;
+                font-size: $font-sm;
+            }
+
+            .newsletter__button {
+                position: absolute;
+                top: 10px;
+                left: 12px;
+                border-radius: $rounded-lg;
+                padding:$gap-xs $gap-md;
+                box-shadow: 0 0 25px rgba($color: $primary-shade, $alpha: 0.3);
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+    .contact,.social{
+        padding: $gap-xl $gap-md;
+        .title{
+            margin-bottom: $gap-xl;
+        }
+
+        ul{
+            li{
+                margin-bottom: $gap-md;
+                .icon-container{
+                    margin-left: $gap-sm;
+                    .icon{
+                        color: $primary;
+                        font-size: $font-xl;
+                    }
+                }
+                .text{
+                    color: $text-color;
+                }
+            }
+        }
+    }
+    &__copy-right{
+        border-top: 2px solid $gray;
+        padding:$gap-md 0;
+        .copy-right__text{
+            text-align: center;
+        }
+    }
+}
+
+@include phone-md{
+    .footer{
+        padding:$gap-xl $gap-xxs;
+    }
+}

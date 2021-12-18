@@ -1,0 +1,167 @@
+@import '../../../Style/Var';
+
+.contact-us {
+    margin-top: 17em;
+    background-color: $gray;
+   
+
+    &__heading {
+        .description {
+            max-width: 450px;
+            line-height: 2;
+        }
+    }
+
+    &__text-container {
+        @include flex(center, inherit, column);
+
+        .contact-us__info {
+            display: flex;
+
+            .contact__block {
+                margin-top: $gap-md;
+                @include flex(inherit, center);
+
+                .icon__container {
+                    @include flex(center, center);
+                    padding: $gap-xs;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: $rounded-lg;
+                    background-color: $primary;
+                    margin-left: $gap-sm;
+
+                    .icon {
+                        font-size: $font-xl;
+                        color: $white;
+                    }
+                }
+
+                &:nth-child(2) {
+                    margin-right: $gap-sm;
+                }
+
+            }
+        }
+    }
+
+    &__form-container {
+        position: relative;
+        top: -140px;
+        background-color: $white;
+        padding: $gap-3xl $gap-2xl;
+        border-radius: $rounded-2xl;
+        border: 1px solid $gray;
+        box-shadow: 0 2px 8px 0 rgba($color: $dark, $alpha: 0.1), 0 1px 13px 0 rgba($color: $dark, $alpha: 0.1);
+        @include flex(center, inherit);
+
+        .contact-us__form {
+            @include flex(flex-start, center, column);
+
+            .form__row {
+                flex-wrap: wrap;
+                display: flex;
+
+                .form__group {
+                    margin-bottom: $gap-md;
+                    width: 100%;
+
+                    label {
+                        display: block;
+                        margin-bottom: $gap-sm;
+                        font-family: $estedad-bold;
+                    }
+
+                    .contact-us__input {
+                        width: 100%;
+                        border-radius: $rounded-lg;
+                        border: 1px solid $gray;
+                        box-shadow: 0 4px 10px 0 rgba($color: $dark, $alpha: 0.1);
+                        padding: $gap-sm $gap-md;
+                    }
+
+                }
+            }
+
+            .textarea-container {
+                width: 100%;
+
+                .form__group {
+                    margin-left: 0 !important;
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+
+                    textarea {
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            .contact-us__button {
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:1200px) {
+    .contact-us {
+        margin-top: $gap-3xl;
+        padding: $gap-xl 0 8.5em;
+
+        &__heading {
+            @include flex(inherit, center, column);
+        }
+
+        &__text-container {
+            .contact-us__info {
+                justify-content: center;
+            }
+        }
+
+        &__form-container {
+            top: 0;
+            margin-top: $gap-3xl;
+        }
+    }
+}
+
+@include tablet-lg {
+    .contact-us {
+        &__text-container {
+            .contact-us__info {
+                flex-wrap: wrap;
+
+                .contact__block {
+                    .icon__container {
+                        width: 35px;
+                        height: 35px;
+
+                        .icon {
+                            font-size: $font-lg;
+                        }
+
+                    }
+
+                    .text {
+                        font-size: $font-md;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include phone-md {
+    .contact-us {
+        &__form-container {
+            padding: $gap-xl $gap-md;
+        }
+
+        &__button {
+            width: 100%;
+        }
+    }
+}

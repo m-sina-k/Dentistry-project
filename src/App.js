@@ -4,6 +4,8 @@ import Backdrop from "./Components/Backdrop";
 import Header from "./Components/Header/Header";
 import SidebarMenu from "./Components/Header/SidebarMenu/SidebarMenu";
 import Home from "./Pages/Home/Home";
+import  Footer from './Components/Footer/Footer'
+
 function App() {
   return (
     <Router>
@@ -16,6 +18,7 @@ function App() {
         <Route path="/about" />
         <Route path="/blog" />
       </Switch>
+      <Footer />
     </Router>
   );
 }
