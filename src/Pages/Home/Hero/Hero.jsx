@@ -14,7 +14,7 @@ function Hero() {
           <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0 hero__block">
             <div className="hero__block--text">
               <section className="heading__container">
-              <h1 className="heading"> با اطمینان ، <span className="heading__highlight">  لبخندتان </span> را به ما بسپارید ! </h1>
+              <h1 className="heading"> با اطمینان ، <span className="heading__highlight">  لبخندتان </span> را به ما بسپارید! </h1>
                
               </section>
               <p className="description">

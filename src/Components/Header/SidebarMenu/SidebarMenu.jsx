@@ -82,7 +82,7 @@ function SidebarMenu() {
                 {subMenus ? (
                   <MdKeyboardArrowDown
                     className={`dropdown-icon ${
-                      subMenuId === activeDropdown ? "dropdown-icon--rotated" : ""
+                      activeDropdown === subMenuId ? "dropdown-icon--rotated" : ""
                     }`}
                   />
                 ) : null}

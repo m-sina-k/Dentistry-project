@@ -62,12 +62,13 @@
             @include transition(all, 0.4s, ease);
 
             .dropdown-icon {
-                margin-right: $gap-xxs;
-                font-size: $font-lg;
+                font-size: $font-xl;
                 @include transition(all, 0.4s, ease);
-                &--rotated{
+
+                &--rotated {
                     transform: rotate(180deg);
                 }
+               
             }
 
             &:hover {
@@ -102,10 +103,12 @@
         background-color: $gray;
         margin: 0;
         border-radius: $rounded-md;
-        overflow: hidden;
-        max-height: 0;
+        // overflow: hidden;
+        // max-height: 0;
         padding: 0 $gap-sm;
-        @include transition(max-height, 0.7s, ease);
+        // @include transition(max-height, 0.6s, ease);
+        // @include transition(max-height, 0.7s, ease);
+        transition:background-color 1s ease-in-out;
 
         li{
             &:first-child{
@@ -128,7 +131,11 @@
         }
         
         &--active {
-            max-height: 1000px;
+            // max-height: 2000px;
+            transition:background-color 1s ease-in-out;
+            background-color: cadetblue;
+            // transition:max-height .4s ease-in-out .4s;
+            // overflow: visible;
         }
     }
     &--active{

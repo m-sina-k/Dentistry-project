@@ -14,7 +14,6 @@
             .heading__container {
                 display: flex;
                 max-width: 80%;
-
                 .heading__highlight {
                     font: $font-5xl $estedad-black;
                     color: $primary-tint;
@@ -26,7 +25,7 @@
             }
 
             .description {
-                margin: $gap-xl 0;
+                margin: $gap-xs 0 $gap-xl;
                 max-width: 80%;
             }
 
@@ -86,10 +85,11 @@
                 .heading__container {
                     width: 450px;
                     max-width: 90%;
+                    margin-bottom: 0;
                 }
 
                 .description {
-                    margin: $gap-md 0;
+                    margin: $gap-xxs 0 $gap-lg;
                     width: 500px;
                     max-width: 90%;
                 }
@@ -118,6 +118,7 @@
                     .button {
                         padding: $gap-xs $gap-lg;
                         font-size: $font-md;
+                        border-radius: $rounded-md;
                     }
                 }
             }
