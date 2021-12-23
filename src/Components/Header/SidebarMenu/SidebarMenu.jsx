@@ -1,16 +1,15 @@
 /* ------------------------------- components ------------------------------- */
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import SidebarDropDown from "../DropDownMenu/SidebarDropDown";
 import { useGlobalContext } from "../../../Context/context";
 import useWindowDimensions from "./../../../hooks/useWindowDimensions";
-import { useClickOutside } from "../../../hooks/useClickOutside";
-import { v4 as uuidv4 } from 'uuid';
+import OnClickOutside from "react-onclickoutside";
+import { v4 as uuidv4 } from "uuid";
+import SidebarDropdownLink from "../DropDownMenu/SidebarDrowdownLink";
 /* --------------------------------- styles --------------------------------- */
 import logo from "../../../Assets/Images/logo.png";
 import { IoMdClose } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import "./SidebarMenu.scss";
 
 /* ---------------------------------- data ---------------------------------- */
@@ -22,11 +21,11 @@ function SidebarMenu() {
 
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-    const closeSidebarMenu = ()=>{
-        setShowSidebarMenu(false);
-        setShowBackdrop(false);
-        setActiveDropdown(null)
-    }
+  const closeSidebarMenu = () => {
+    setShowSidebarMenu(false);
+    setShowBackdrop(false);
+    setActiveDropdown(null);
+  };
 
   const toggleDropDown = (e, subMenuId) => {
     e.preventDefault();
@@ -36,19 +35,22 @@ function SidebarMenu() {
 
   // close sidebar menu on large screen's
   const { width } = useWindowDimensions();
-  if (width > 992 && showSidebarMenu) {
-    closeSidebarMenu();
-  }
+  useEffect(() => {
+    if (width > 992 && showSidebarMenu) {
+      closeSidebarMenu();
+    }
+  }, [width]);
+
   // close sidebar menu on click outside
-  const sidebarRef = useRef();
-  useClickOutside(sidebarRef, closeSidebarMenu);
+  SidebarMenu.handleClickOutside = () => {
+    closeSidebarMenu();
+  };
 
   return (
     <aside
       className={`sidebar-menu ${
         showSidebarMenu ? "sidebar-menu--active" : ""
       }`}
-      ref={sidebarRef}
     >
       <section className="sidebar-menu__heading">
         <figure className="sidebar-menu__logo">
@@ -64,43 +66,31 @@ function SidebarMenu() {
 
       <section className="sidebar-menu__links-container">
         {links.map((link) => {
-          const { text, url, subMenus, subMenuId } = link;
-          return (
+          const { id, text, url, subMenus, subMenuId } = link;
+          return subMenus ? (
+            <SidebarDropdownLink
+              key={id}
+              link={link}
+              activeDropdown={activeDropdown}
+              toggleDropDown={toggleDropDown}
+              closeSidebarMenu={closeSidebarMenu}
+            />
+          ) : (
             <div className="sidebar-link-container" key={uuidv4()}>
               <NavLink
                 className="sidebar-link"
                 activeClassName="sidebar-link--active"
                 exact
                 to={url}
-                onClick={
-                  subMenus
-                    ? (e) => toggleDropDown(e, subMenuId)
-                    : closeSidebarMenu
-                }
+                onClick={closeSidebarMenu}
               >
                 {text}
-                {subMenus ? (
-                  <MdKeyboardArrowDown
-                    className={`dropdown-icon ${
-                      activeDropdown === subMenuId ? "dropdown-icon--rotated" : ""
-                    }`}
-                  />
-                ) : null}
               </NavLink>
-              {subMenus ? (
-                <SidebarDropDown
-                  link={link}
-                  links={subMenus}
-                  activeDropdown={activeDropdown}
-                  closeSidebarMenu={closeSidebarMenu}
-                  key={uuidv4()}
-                />
-              ) : null}
             </div>
           );
         })}
       </section>
-      
+
       <section className="sidebar-menu__widgets">
         <a
           href="tel:(021-78543901)"
@@ -117,4 +107,8 @@ function SidebarMenu() {
   );
 }
 
-export default SidebarMenu;
+const clickOutsideConfig = {
+  handleClickOutside: () => SidebarMenu.handleClickOutside,
+};
+
+export default OnClickOutside(SidebarMenu, clickOutsideConfig);

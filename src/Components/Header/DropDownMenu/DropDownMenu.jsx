@@ -1,13 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function DropDownMenu({ links, activeDropdown, subMenuId,closeDropdown },ref) {
+function DropDownMenu({ links, activeDropdown, subMenuId,setActiveDropdown }) {
   return (
     <div
       className={`header__dropdown-menu ${
         activeDropdown === subMenuId ? "header__dropdown-menu--active" : ""
       }`}
-      ref={ref}
     >
       {links.map((link) => {
         const { id, text, url } = link;
@@ -18,7 +17,7 @@ function DropDownMenu({ links, activeDropdown, subMenuId,closeDropdown },ref) {
             exact
             className="dropdown-link"
             activeClassName="dropdown-link--active"
-            onClick={closeDropdown}
+            onClick={()=>setActiveDropdown(null)}
           >
             {text}
           </NavLink>
@@ -28,4 +27,4 @@ function DropDownMenu({ links, activeDropdown, subMenuId,closeDropdown },ref) {
   );
 }
 
-export default React.forwardRef(DropDownMenu);
+export default DropDownMenu;

@@ -2,6 +2,7 @@ import React from "react";
 import { blogPosts } from "../../../Assets/Data/blogPosts";
 import Heading from "../../../Components/Heading/Heading";
 import BlogPost from "./BlogPost";
+import {v4 as uuidv4} from 'uuid'
 import "./Blog.scss";
 
 function Blog() {
@@ -14,7 +15,7 @@ function Blog() {
         extraClass="blog__heading"
       />
       <div className="posts__container">
-          {blogPosts.map(post=> <BlogPost post={post}/>)}
+          {blogPosts.map(post=> <BlogPost post={post} key={uuidv4()}/>)}
       </div>
     </div>
   );

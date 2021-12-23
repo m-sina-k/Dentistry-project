@@ -1,0 +1,46 @@
+@import '../../Style/Var';
+
+.loading{
+    background-color: $white;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index:$z-max;
+    @include transition(all , 0.4s,ease);
+    &__container{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-60%);
+        .loading__logo-container{
+           @include flex(inherit,center,column);
+        }
+        .animation {
+            margin-top: $gap-xl;
+            width:250px;
+            height:20px;
+            border-radius: 40px;
+            color:$primary ;
+            background-color: $gray;
+            border:2px solid;
+            position: relative;
+          }
+          .animation::before {
+            content:"";
+            position: absolute;
+            margin:2px;
+            width:20%;
+            top:0;
+            bottom:0;
+            left:0;
+            border-radius: inherit;
+            background:currentColor;
+            animation:w3 1.5s infinite linear;
+          }
+          @keyframes w3 {
+              50% {left:100%;transform: translateX(calc(-100% - 4px))}
+          }
+    }
+}
+
+

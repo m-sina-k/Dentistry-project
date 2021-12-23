@@ -7,9 +7,11 @@
     box-shadow: 0 0 25px rgba($color: $dark, $alpha: 0.2);
 
     &__text-container {
+        position: relative;
         @include flex(center,flex-start,column);
         background-color: $primary;
         padding: 0 $gap-2xl !important;
+        overflow: hidden;
         .reserv-banner__text{
             color: $white;
             margin-bottom: $gap-xl;
@@ -17,6 +19,14 @@
         .reserv-banner__button{
             padding: $gap-sm $gap-xl;
             font: $font-lg $estedad-bold;
+        }
+        .bg-shape--1{
+            top: -200px;
+            right: -200px;
+        }
+        .bg-shape--2{
+            bottom: -200px;
+            left: -200px;
         }
     }
 }

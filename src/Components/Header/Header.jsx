@@ -10,6 +10,7 @@ import { useGlobalContext } from "../../Context/context";
 
 /* ---------------------------------- style --------------------------------- */
 import logo from "../../Assets/Images/logo.png";
+import Fade from 'react-reveal/Fade'
 import "./Header.scss";
 
 function Header() {
@@ -24,12 +25,14 @@ function Header() {
     <header className="header">
       <div className="header__container">
         <div className="header__block--right">
+          <Fade delay={500} duration={2500}>
           <figure className="header__logo">
             <Link to="/" className="logo-link">
               <img src={logo} alt="header-logo" className="logo-link__image" />
               <figcaption className="logo-link__text">دندانپزشکی</figcaption>
             </Link>
           </figure>
+          </Fade>
         </div>
 
         <div className="header__block--left">

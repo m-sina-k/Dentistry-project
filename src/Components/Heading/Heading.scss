@@ -63,8 +63,10 @@
 
 @include phone-md {
     .heading__container {
+        margin-bottom: 0;
         .title {
-            font-size: $font-xl;
+            font-size: $font-2xl;
+            margin-bottom: $gap-sm;
         }
     }
 }

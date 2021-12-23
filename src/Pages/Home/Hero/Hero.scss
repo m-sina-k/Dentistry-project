@@ -8,9 +8,10 @@
         display: flex;
 
         &--text {
+            overflow: hidden;
+            position: relative;
             width: max-content;
             padding: 37% 15% 0 0;
-
             .heading__container {
                 display: flex;
                 max-width: 80%;
@@ -18,18 +19,19 @@
                     font: $font-5xl $estedad-black;
                     color: $primary-tint;
                 }
-
+                
                 .heading {
                     font: $font-4xl $estedad-bold;
                 }
             }
-
+            
             .description {
                 margin: $gap-xs 0 $gap-xl;
                 max-width: 80%;
             }
-
+            
             .button__container {
+                z-index: 1;
                 .button {
                     padding: $gap-sm $gap-xl;
                     font-size: $font-xl;
@@ -38,6 +40,14 @@
                         margin-left: $gap-lg;
                     }
                 }
+            }
+            .bg-shape--1{
+                top: -17%;
+                right: -20%;
+            }
+            .bg-shape--2{
+                bottom: -7%;
+                left: -15%;
             }
         }
 
@@ -93,6 +103,14 @@
                     width: 500px;
                     max-width: 90%;
                 }
+                .bg-shape--1{
+                    top: -45%;
+                    right: -22%;
+                }
+                .bg-shape--2{
+                    bottom: -55%;
+                    left: -15%;
+                }
             }
         }
     }
@@ -100,8 +118,6 @@
 
 @include tablet-lg {
     .hero {
-        margin-bottom: 22rem;
-
         &__block {
             &--text {
                 .heading__container {
@@ -120,6 +136,14 @@
                         font-size: $font-md;
                         border-radius: $rounded-md;
                     }
+                }
+                .bg-shape--1{
+                    top: -60%;
+                    right: -35%;
+                }
+                .bg-shape--2{
+                    bottom: -75%;
+                    left: -35%;
                 }
             }
         }
@@ -152,6 +176,14 @@
                         padding: $gap-xs $gap-md;
                         font-size: $font-sm;
                     }
+                }
+                .bg-shape--1{
+                    top: -70%;
+                    right: -65%;
+                }
+                .bg-shape--2{
+                    bottom: -75%;
+                    left: -65%;
                 }
             }
         }

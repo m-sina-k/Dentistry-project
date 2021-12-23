@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Zoom from "react-reveal/Zoom";
 import Heading from "../../../Components/Heading/Heading";
-import clinicPic1 from '../../../Assets/Images/Home-page/About -us/about-us-pic-01.jpeg'
-import clinicPic2 from '../../../Assets/Images/Home-page/About -us/about-us-pic-02.jpeg'
+import clinicPic1 from "../../../Assets/Images/Home-page/About -us/about-us-pic-01.jpeg";
+import clinicPic2 from "../../../Assets/Images/Home-page/About -us/about-us-pic-02.jpeg";
 import doctorPic from "../../../Assets/Images/others/doctors/doctor-01.jpg";
+import circleShape from "../../../Assets/Images/others/circle-shape.svg";
 import "./AboutUs.scss";
 
 function AboutUs() {
@@ -14,12 +15,14 @@ function AboutUs() {
         <div className="about-us__container">
           <div className="row about-us__row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 about-us__image-container">
-              <figure className="parent-image__container">
-                <img src={clinicPic1} alt="clinic-environment" />
-                <figure className="child-image__container">
-                <img src={clinicPic2} alt="clinic-environment" />
+              <Zoom duration={1500}>
+                <figure className="parent-image__container">
+                  <img src={clinicPic1} alt="clinic-environment" />
+                  <figure className="child-image__container">
+                    <img src={clinicPic2} alt="clinic-environment" />
+                  </figure>
                 </figure>
-              </figure>
+              </Zoom>
             </div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 about-us__text-container">
               <Heading
@@ -46,6 +49,8 @@ function AboutUs() {
           </div>
         </div>
       </main>
+      <img src={circleShape} alt="shape" className="bg-shape bg-shape--1" />
+      <img src={circleShape} alt="shape" className="bg-shape bg-shape--2" />
     </div>
   );
 }

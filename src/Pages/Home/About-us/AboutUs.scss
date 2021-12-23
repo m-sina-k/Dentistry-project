@@ -3,14 +3,16 @@
 .about-us {
     background-color: $gray;
     padding: $gap-3xl $gap-xxs;
-
+    overflow: hidden;
+    position: relative;
     &__row {
         padding: $gap-lg 0;
     }
 
     &__image-container {
+        z-index: 1;
         padding-bottom: $gap-3xl;
-        img {
+        img:not(.bg-shape) {
             border-radius: $rounded-2xl;
             box-shadow: 0 0 15px rgba($color: $dark, $alpha: 0.3);
         }
@@ -32,9 +34,11 @@
                 }
             }
         }
+        
     }
 
     &__text-container {
+        z-index: 1;
         @include flex(center,flex-start,column);
         .doctor {
             @include flex(inherit, center);
@@ -62,6 +66,14 @@
             margin-top: $gap-lg;
             padding: $gap-md $gap-xl;
         }
+    }
+    .bg-shape--1{
+        top: -20%;
+        right: -10%;
+    }
+    .bg-shape--2{
+        bottom: -20%;
+        left: -7%;
     }
 }
 
@@ -98,6 +110,14 @@
                     font-size: $font-lg;
                 }
             }
+        }
+        .bg-shape--1{
+            top: -10%;
+            right: -25%;
+        }
+        .bg-shape--2{
+            bottom: -10%;
+            left: -27%;
         }
     }
 }

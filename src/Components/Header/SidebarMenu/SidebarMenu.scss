@@ -85,8 +85,9 @@
     }
 
     &__widgets {
+        margin-top: $gap-xl;
         .sidebar-widget {
-            margin-bottom: $gap-sm;
+            margin: $gap-sm;
             display: block;
             text-align: center;
 
@@ -103,12 +104,10 @@
         background-color: $gray;
         margin: 0;
         border-radius: $rounded-md;
-        // overflow: hidden;
-        // max-height: 0;
+        overflow: hidden;
+        max-height: 0;
         padding: 0 $gap-sm;
-        // @include transition(max-height, 0.6s, ease);
-        // @include transition(max-height, 0.7s, ease);
-        transition:background-color 1s ease-in-out;
+        @include transition(max-height, 0.7s, ease);
 
         li{
             &:first-child{
@@ -131,12 +130,9 @@
         }
         
         &--active {
-            // max-height: 2000px;
-            transition:background-color 1s ease-in-out;
-            background-color: cadetblue;
-            // transition:max-height .4s ease-in-out .4s;
-            // overflow: visible;
+            max-height: 1000px;
         }
+    
     }
     &--active{
         right: 0;

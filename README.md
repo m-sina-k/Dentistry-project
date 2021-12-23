@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Packages
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## react-onClickOutside
 
-## Available Scripts
+This package is used to trigger a callback function when user click's outside of a component.
 
-In the project directory, you can run:
+**Usage**
 
-### `npm start`
+```javascript
+import OnClickOutside from "react-onclickoutside";
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Component.handleClickOutside = () => callBack();
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+const clickOutsideConfig = {
+  handleClickOutside: () => Component.handleClickOutside,
+};
 
-### `npm test`
+export default OnClickOutside(Component, clickOutsideConfig);
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**[Github page](https://github.com/Pomax/react-onclickoutside)**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## react-reveal
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This package used to add animation's while component is rendering.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Usage**
 
-### `npm run eject`
+```javascript
+import AnimationName from "react-reveal/AnimationName";
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<AnimationName duration={1000} delay={1000} prop>
+  <Component />
+</AnimationName>;
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**[Github page](https://github.com/rnosov/react-reveal)**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## swiper
 
-## Learn More
+This package used to create silders.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Usage**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation } from "swiper";
+import "swiper/swiper.scss";
+import "swiper/components/navigation/navigation.scss";
+SwiperCore.use([Navigation]);
 
-### Code Splitting
+<Swiper
+  slidesPerView={x}
+  spaceBetween={x}
+  modules={[Navigation]}
+  navigation
+  loop
+  className=""
+  breakpoints={{}}
+>
+  <SwiperSlide>
+    <Component />
+  </SwiperSlide>
+</Swiper>;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**[Github page](https://github.com/nolimits4web/swiper)**
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Custom Hooks
 
-### Making a Progressive Web App
+## useGlobalContext
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This custom hook is used to access the global context and destructure from it easily.
 
-### Advanced Configuration
+**Usage**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```javascript
+import useGlobalContext from 'context';
 
-### Deployment
+const {var1,var2} = useGlobalContext();
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## useWindowDimensions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This hook is used to messure the width and height of the document and return it.
+this hook is used in the application to trigger a callback function if the width/height of document changed.
+
+**Usage**
+
+```javascript
+import useWindowDimensions from "./hooks/useWindowDimensions";
+
+const { width,height } = useWindowDimensions();
+  useEffect(() => {
+    if (width > 992 || height < 580) {
+      callBack();
+    }
+  }, [width,height]);
+```

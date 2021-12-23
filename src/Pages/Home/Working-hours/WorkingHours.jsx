@@ -26,7 +26,7 @@ function WorkingHours() {
           </ul>
         </section>
       </section>
-
+    
       <section className="working-hours__item">
         <span className="icon__container">
           <BsFillClockFill className="icon" />
@@ -54,7 +54,6 @@ function WorkingHours() {
           </ul>
         </section>
       </section>
-
       <section className="working-hours__item">
         <span className="icon__container">
           <FaTooth className="icon" />

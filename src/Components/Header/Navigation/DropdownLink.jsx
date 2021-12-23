@@ -1,40 +1,33 @@
 /* -------------------------------- component ------------------------------- */
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useClickOutside } from "../../../hooks/useClickOutside";
 import useWindowDimensions from "./../../../hooks/useWindowDimensions";
 import DropDownMenu from "../DropDownMenu/DropDownMenu";
+import OnClickOutside from 'react-onclickoutside'
 /* ---------------------------------- style --------------------------------- */
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-function DropdownLink({ text, subMenuId, subMenus, url, id }) {
+function DropdownLink({ text, subMenuId, subMenus, url}) {
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [showDropdownBg, setShowDropdownBg] = useState(false);
 
   const openDropDown = (e, subMenuId) => {
     e.preventDefault();
-    setShowDropdownBg(true);
-    setActiveDropdown(subMenuId);
+    
+    activeDropdown ? setActiveDropdown(null) : setActiveDropdown(subMenuId);
   };
 
-  const closeDropDown = () => {
-    setShowDropdownBg(false);
-    setActiveDropdown(null);
-  };
-
-  // close the dropdown when click outside of it (on the dropdownBg overlay)
-  const dropdownRef = useRef();
-  useClickOutside(dropdownRef, closeDropDown);
 
   // close the dropdown on small screen's
   const { width } = useWindowDimensions();
   if (width < 992 && activeDropdown) {
-    closeDropDown();
+    setActiveDropdown(null)
   }
+
+ // close the dropdown when click outside of it
+  DropdownLink.handleClickOutside = ()=>setActiveDropdown(null);
 
   return (
     <div className="link-container">
-      {showDropdownBg && <div className="dropdown-bg"></div>}
       <NavLink
         to={url}
         exact
@@ -55,12 +48,14 @@ function DropdownLink({ text, subMenuId, subMenus, url, id }) {
         subMenuId={subMenuId}
         links={subMenus}
         activeDropdown={activeDropdown}
-        closeDropdown={closeDropDown}
-        ref={dropdownRef}
-        closeDropDown={closeDropDown}
+        setActiveDropdown={setActiveDropdown}
       />
     </div>
   );
 }
 
-export default DropdownLink;
+const clickOutsideConfig = {
+  handleClickOutside : ()=>DropdownLink.handleClickOutside
+}
+
+export default OnClickOutside(DropdownLink,clickOutsideConfig);

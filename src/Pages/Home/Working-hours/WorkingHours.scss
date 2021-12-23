@@ -1,8 +1,9 @@
 @import '../../../Style/Var';
-
+.test{
+    
+}
 .working-hours {
     position: absolute;
-    // top: 90%;
     bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
@@ -14,10 +15,9 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(3, 1fr);
-    // margin-bottom:5rem;
 
     &__item {
-        @include flex(center, flex-start);
+        @include flex(baseline, flex-start);
         padding: 0 $gap-sm;
 
         .icon__container {
@@ -63,13 +63,13 @@
                 text-align: right;
             }
         }
-
         &:nth-child(2) {
             border-right: 2px solid #d9d8e5;
             ;
             border-left: 2px solid #d9d8e5;
             ;
         }
+       
     }
 }
 
@@ -89,30 +89,31 @@
         }
     }
 }
-
 @include tablet-lg {
     .working-hours {
         padding: $gap-sm;
         width: 75%;
         height: max-content;
-        bottom: -250px;
-        // top: 70%;
-
-
+        bottom: -180px;
+      
         &__item {
             @include flex(center, center, row);
-            grid-column: 1 / -1;
             padding: $gap-md;
-
+            grid-column: 1 / -1;
+            
             .description {
-                @include flex(center, center, column);
-
+                @include flex(center, flex-start, column);
+                text-align: center;
+                width: 250px;
                 .title {
                     width: 100%;
-                    text-align: right;
+                }
+                ul{
+                    margin-top: $gap-xs;
                 }
             }
 
+           
             &:nth-child(2) {
                 border-right: none;
                 border-left: none;
@@ -121,19 +122,18 @@
                 border-bottom: 2px solid #d9d8e5;
                 ;
             }
-
         }
     }
 }
 
 @include phone-md {
     .working-hours {
-        padding: $gap-lg $gap-sm;
+        padding: $gap-xs $gap-sm;
         width: 90%;
-
+       
         &__item {
             @include flex(center, center);
-            padding: $gap-sm $gap-xs;
+            padding: $gap-lg $gap-xs;
 
             .icon__container {
                 padding: $gap-sm;
@@ -145,11 +145,19 @@
             }
 
             .description {
-                align-items: center;
+                align-items: flex-start;
                 text-align: center;
+                width: 99%;
 
                 .title {
                     font-size: $font-xl;
+                }
+
+                ul{
+                    margin-top: 0;
+                    li{
+                        font-size: $font-sm;
+                    }
                 }
             }
 

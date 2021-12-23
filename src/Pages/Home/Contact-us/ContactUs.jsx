@@ -2,6 +2,8 @@ import React from "react";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "./ContactUs.scss";
 import Heading from "./../../../Components/Heading/Heading";
+import Fade from 'react-reveal/Fade'
+import circleShape from '../../../Assets/Images/others/circle-shape.svg'
 
 function ContactUs() {
   return (
@@ -32,6 +34,7 @@ function ContactUs() {
               </section>
             </div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6  d-flex justify-content-center">
+              <Fade duration={1500} delay={700}>
                 <div className="contact-us__form-container">
                 <form action="#" className="contact-us__form">
                     <div className="form__row">
@@ -63,10 +66,14 @@ function ContactUs() {
                     <button type="submit" className="contact-us__button button button--primary">ارسال پیام</button>
                 </form>
                 </div>
+                </Fade>
             </div>
           </div>
         </div>
-      </main>
+      </main>  
+      <img src={circleShape} alt="shape" className="bg-shape bg-shape--1" />
+      <img src={circleShape} alt="shape" className="bg-shape bg-shape--2" />
+
     </div>
   );
 }

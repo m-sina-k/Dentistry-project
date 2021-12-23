@@ -18,10 +18,9 @@ function Navigation() {
             url={url}
             subMenuId={subMenuId}
             subMenus={subMenus}
-            
           />
         ) : (
-          <div className="link-container"  key={uuidv4()}>
+          <div className="link-container" key={uuidv4()}>
             <NavLink
               to={url}
               exact
