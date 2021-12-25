@@ -1,7 +1,7 @@
 /* -------------------------------- component ------------------------------- */
 import React from "react";
 import Heading from "../../../Components/Heading/Heading";
-import ServicesCard from "./ServicesCard";
+import ServicesCard from "../../../Components/ServicesCard";
 import { v4 as uuidv4 } from 'uuid';
 // swiper js slider
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,13 +9,13 @@ import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 
-import { homeServices } from "../../../Assets/Data/home-services";
-import "./Services.scss";
+import { services } from "../../../Assets/Data/services";
+import "./HomeServices.scss";
 SwiperCore.use([Navigation]);
 
-function Services() {
+function HomeServices() {
   return (
-    <div className="services">
+    <div className="home-services">
       <Heading
         subtitle=" خدمات "
         title=" تیم پزشکی ما خدمات متعددی را برای  دندان های شما ارائه میکند."
@@ -49,7 +49,7 @@ function Services() {
           },
         }}
       >
-        {homeServices.map((service) => {
+        {services.map((service) => {
           return (
             <SwiperSlide key={uuidv4()}>
               <ServicesCard service={service}/>
@@ -61,4 +61,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default HomeServices;

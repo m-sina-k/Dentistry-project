@@ -1,9 +1,9 @@
 import React from 'react'
 
 function ServicesCard({service}) {
-    const {id,name,image,description} = service;
+    const {name,image,description} = service;
     return (
-        <article className='services__card'>
+        <article className='home-services__card servives__card'>
             <figure className="image__container">
                 <img src={image} alt="service" className='service__image' />
             </figure>

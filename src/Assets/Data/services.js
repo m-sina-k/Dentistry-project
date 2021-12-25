@@ -5,7 +5,7 @@ import image4 from '../Images/Home-page/Home-services/home-services-04.svg'
 import image5 from '../Images/Home-page/Home-services/home-services-05.svg'
 import image6 from '../Images/Home-page/Home-services/home-services-06.svg'
 
-export const homeServices = [
+export const services = [
     {
         id: 1,
         image:image1,

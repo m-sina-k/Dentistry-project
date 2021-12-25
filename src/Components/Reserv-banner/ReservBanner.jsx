@@ -1,8 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import bannerImage from '../../../Assets/Images/Home-page/reserv-banner.jpeg'
+import bannerImage from '../../Assets/Images/others/reserv-banner.jpeg'
 import Jump from 'react-reveal/Jump';
-import circleShape from '../../../Assets/Images/others/circle-shape.svg'
+import circleShape from '../../Assets/Images/others/circle-shape.svg'
 import './ReservBanner.scss'
 
 function ReservBanner() {

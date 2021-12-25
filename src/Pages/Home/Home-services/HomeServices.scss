@@ -1,8 +1,7 @@
 @import '../../../Style/Var';
 
-.services {
+.home-services {
     padding: $gap-md $gap-xxs;
-
     &__card {
         @include transition(all, 0.3s, ease-in);
         background-color: $white;

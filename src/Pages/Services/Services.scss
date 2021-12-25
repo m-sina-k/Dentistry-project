@@ -1,0 +1,37 @@
+@import '../../Style/Var';
+
+.services{
+    padding: $gap-xl;
+    &__heading{
+        .description{
+            max-width: 500px;
+        }
+    }
+    &__item-container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr );
+        grid-gap: 25px;
+        margin-bottom: $gap-3xl;
+    }
+}
+
+@include desktop-sm{
+    .services{
+        padding: $gap-xl $gap-md;
+        &__item-container{
+            grid-template-columns: repeat(2,1fr );
+        }
+    }
+}
+
+@include tablet-sm{
+    .services{
+        padding: $gap-sm $gap-md;
+        &__item-container{
+            grid-template-columns: unset;
+            .services__card{
+                grid-column: 1/-1;
+            }
+        }
+    }
+}

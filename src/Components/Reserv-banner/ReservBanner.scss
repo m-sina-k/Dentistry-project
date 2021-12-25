@@ -1,4 +1,4 @@
-@import '../../../Style/Var';
+@import '../../Style/Var';
 
 .reserv-banner {
     margin-top: $gap-xl;
@@ -13,10 +13,12 @@
         padding: 0 $gap-2xl !important;
         overflow: hidden;
         .reserv-banner__text{
+            z-index: 1;
             color: $white;
             margin-bottom: $gap-xl;
         }
         .reserv-banner__button{
+            z-index: 1;
             padding: $gap-sm $gap-xl;
             font: $font-lg $estedad-bold;
         }
