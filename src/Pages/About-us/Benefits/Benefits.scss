@@ -1,0 +1,98 @@
+@import '../../../Style/Var';
+
+.benefits {
+    padding: $gap-3xl $gap-sm;
+
+    &__heading {
+        @include flex(inherit, center, column);
+
+        .description {
+            max-width: 500px;
+            text-align: center;
+        }
+    }
+
+    &__item-container {
+        margin: $gap-lg 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 25px;
+
+        .benefits__item {
+            border: 2px solid $gray;
+            box-shadow: 0 2px 5px 0 rgba($color: $dark, $alpha: 0.1), 0 1px 10px 0 rgba($color: $dark, $alpha: 0.1);
+            padding: $gap-xl $gap-md;
+            border-radius: $rounded-2xl;
+            display: flex;
+            align-items: center;
+
+            .item__image-container {
+                .item__image {
+                    min-width: 65px;
+                    min-height: 65px;
+                    border-radius: $rounded-md;
+                }
+            }
+
+            .item__info-container {
+                margin-right: $gap-md;
+
+                .item__title {
+                    margin-bottom: $gap-xs;
+                }
+
+            }
+        }
+    }
+
+    &__button-container{
+        margin-top: $gap-xl;
+        display: flex;
+        justify-content: center;
+        .benefits__button{
+            padding:$gap-sm $gap-2xl;
+            border-radius: $rounded-xl;
+            font-size: $font-lg;
+            &:first-child{
+                margin-left: $gap-xl;
+            }
+        }
+    }
+}
+
+
+@include desktop-sm {
+    .benefits {
+        padding: $gap-3xl 0;
+
+        &__item-container {
+            grid-gap: 15px;
+        }
+    }
+}
+
+@include tablet-lg {
+    .benefits {
+        padding: $gap-xl $gap-xxs;
+
+        &__item-container {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@include phone-md{
+    .benefits{
+        &__button-container{
+            flex-wrap: wrap;
+            .benefits__button{
+                width: 100%;
+                text-align: center;
+                margin-bottom: $gap-md;
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

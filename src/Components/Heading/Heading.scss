@@ -3,8 +3,8 @@
 .heading__container {
     padding: $gap-md 0;
     margin-bottom: $gap-sm;
-
     .subtitle {
+        z-index: 1;
         font-family: $estedad-bold;
         display: inline-block;
         background-color: $white;
@@ -13,10 +13,15 @@
         border-radius: $rounded-md;
         box-shadow: 0 1px 4px 0 rgba($color: $dark, $alpha: 0.3), 0 5px 15px 0 rgba($color: $dark, $alpha: 0.1);
     }
-
+    
     .title {
+        z-index: 1;
         max-width: 60%;
         margin: $gap-md 0 $gap-lg;
+    }
+    .description{
+        z-index: 1;
+
     }
 }
 

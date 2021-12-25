@@ -1,0 +1,80 @@
+@import '../../Style/Var';
+
+.our-team {
+    overflow: hidden;
+    position: relative;
+    background-color: $gray;
+    padding: $gap-3xl $gap-sm;
+
+    &__heading {
+        @include flex(inherit, center, column);
+
+        .description {
+            max-width: 500px;
+            text-align: center;
+        }
+    }
+
+    &__item-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 15px;
+        
+        .our-team__item {
+            z-index: 1;
+            .item__image-container {
+                overflow: hidden;
+                border-radius: $rounded-3xl;
+            }
+
+            .item__info-container {
+                padding: $gap-md 0;
+                text-align: center;
+                .item__post{
+                    margin: $gap-xs 0;
+                }
+                .item__contact-container{
+                    .contact__item{
+                        border-radius: $rounded-3xl;
+                        background-color: $primary;
+                        margin: 0 $gap-sm;
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+
+                        .icon{
+                            color: $white;
+                            font-size: $font-sm;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bg-shape--1{
+        top: 75%;
+        right: -100px;
+    }
+    .bg-shape--2{
+        top: -100px;
+        left: -100px;
+    }
+}
+
+@include tablet-lg{
+    .our-team{
+        .bg-shape--1{
+            bottom: unset;
+            top: 70%;
+        }
+    }
+}
+
+@include phone-md{
+    .our-team{
+        .bg-shape--1{
+            top: 90%;
+        }
+    }
+}
+

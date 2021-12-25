@@ -4,6 +4,7 @@ import Backdrop from "./Components/Backdrop";
 import Header from "./Components/Header/Header";
 import SidebarMenu from "./Components/Header/SidebarMenu/SidebarMenu";
 import Home from "./Pages/Home/Home";
+import AboutUs from "./Pages/About-us/AboutUs";
 import Footer from "./Components/Footer/Footer";
 import Loading from "./Components/Loading/Loading";
 import { useGlobalContext } from "./Context/context";
@@ -22,7 +23,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/services" />
-        <Route path="/about" />
+        <Route path="/about" component={AboutUs}/>
         <Route path="/blog" />
       </Switch>
       <Footer />

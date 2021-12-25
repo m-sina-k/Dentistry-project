@@ -1,5 +1,5 @@
 import React from "react";
-import AboutUs from "./About-us/AboutUs";
+import AboutUs from "./Home-About-us/HomeAboutUs";
 import Blog from "./Blog/Blog";
 import ContactUs from "./Contact-us/ContactUs";
 import Hero from "./Hero/Hero";

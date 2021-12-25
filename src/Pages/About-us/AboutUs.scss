@@ -1,0 +1,25 @@
+@import '../../Style/Var';
+
+.about-us{
+    padding:$gap-3xl 0 0;
+    margin-bottom: 0;
+
+    &__heading{
+        .description{
+            max-width: 550px;
+        }
+    }
+
+    .heading-image__container{
+        margin-top: $gap-2xl;
+        .heading__image{
+            border-radius: $rounded-3xl;
+            box-shadow: $shadow-xs;
+        }
+    }
+}
+@include phone-md{
+    .about-us{
+        padding: $gap-md 0 0;
+    }
+}

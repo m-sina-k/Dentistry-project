@@ -1,0 +1,71 @@
+@import '../../../Style/Var';
+
+.history {
+    background-color: $gray;
+    padding:$gap-xl $gap-md;
+    position: relative;
+    overflow: hidden;
+
+    &__heading {
+        @include flex(inherit,center,column);
+        
+        .description {
+            max-width: 500px;
+            text-align: center;
+        }
+    }
+    
+    &__image-container {
+        padding: $gap-xl 0;
+        display: flex;
+        justify-content: center;
+        margin-top: $gap-2xl;
+
+        .history__image {
+            z-index: 1;
+            border-radius: $rounded-3xl;
+            box-shadow: $shadow-xs;
+            max-width: 30%;
+            
+            &--1{
+                transform:  rotate(9deg);
+            }
+            &--2{
+                transform: rotate(-9deg);
+            }
+        }
+    }
+    .bg-shape--1{
+        top: -150px;
+        right: -100px;
+    }
+    .bg-shape--2{
+        bottom: -180px;
+        left: -80px;
+    }
+}
+
+@include tablet-lg{
+    .history{
+        &__image-container{
+            .history__image{
+                max-width: 40%;
+            }
+        }
+    }
+}
+@include phone-md{
+    .history{
+        &__heading{
+            .description{
+                text-align: right;
+            }
+        }
+        &__image-container{
+            margin-top: 0;
+            .history__image{
+                max-width: 45%;
+            }
+        }
+    }
+}
