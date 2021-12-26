@@ -1,6 +1,6 @@
 import React from "react";
 import AboutUs from "./Home-About-us/HomeAboutUs";
-import Blog from "./Blog/Blog";
+import HomeBlog from "./Blog/HomeBlog";
 import ContactUs from "./Contact-us/ContactUs";
 import Hero from "./Hero/Hero";
 import ReservBanner from "../../Components/Reserv-banner/ReservBanner";
@@ -17,7 +17,7 @@ function Home() {
       <main className="page__container">
         <Testimonial />
         <ReservBanner/>
-        <Blog/> 
+        <HomeBlog/> 
       </main>
       <ContactUs/>
     </div>

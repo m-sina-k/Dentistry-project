@@ -1,0 +1,54 @@
+@import '../../Style/Var';
+
+.blog__post {
+    z-index: 1;
+    background-color: $white;
+    border: 1px solid $gray;
+    box-shadow: 0 2px 8px 0 rgba($color: $dark, $alpha: 0.1), 0 1px 13px 0 rgba($color: $dark, $alpha: 0.1);
+    border-radius: $rounded-2xl;
+    overflow: hidden;
+    @include transition(all, 0.3s, ease-in);
+
+    &__image-container {
+        position: relative;
+
+        .post__image {
+            width: 100%;
+        }
+
+        .post__tag {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background-color: $primary;
+            color: $white;
+            font: $font-md $estedad-bold;
+            padding: $gap-xs $gap-md;
+            border-radius: $rounded-lg;
+        }
+    }
+
+    &__text-container {
+        padding: $gap-md $gap-md;
+
+        .post__summary {
+            margin: $gap-md 0;
+            max-width: 80%;
+            line-height: 2;
+        }
+    }
+
+    .post__footer {
+        border-top: 1px solid $gray;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: $gap-md $gap-md;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &:hover {
+        border: 2px solid $primary;
+        transform: translateY(-5px);
+    }
+}

@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import './BlogPost.scss'
 function BlogPost({ post }) {
   const { title, summary, image, tag, date } = post;
   return (
     
-      <article className=" blog__post">
+      <article className="blog__post">
       <figure className="blog__post__image-container">
         <img src={image} alt="post-image" className="post__image" />
         <span className="post__tag">{tag}</span>
