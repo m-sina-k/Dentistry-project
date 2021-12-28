@@ -10,11 +10,10 @@ import Blog from "./Pages/Blog/Blog";
 import ContactUs from './Pages/Contact-us/ContactUs';
 import Footer from "./Components/Footer/Footer";
 import Loading from "./Components/Loading/Loading";
+import NotFound from "./Pages/Not-found/NotFound";
 import { useGlobalContext } from "./Context/context";
 function App() {
   const { showLoading} = useGlobalContext();
-
-  
 
   return showLoading ? (
     <Loading />
@@ -29,6 +28,7 @@ function App() {
         <Route path="/about" component={AboutUs}/>
         <Route path="/blog" component={Blog}/>
         <Route path="/contact" component={ContactUs}/>
+        <Route component={NotFound} />
       </Switch>
       <Footer />
     </Router>

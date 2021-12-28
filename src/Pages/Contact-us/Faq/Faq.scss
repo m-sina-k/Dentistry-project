@@ -61,17 +61,13 @@
                 }
 
                 .answer {
-                    // margin-top: $gap-sm;
-                    // display: none;
-                    padding-left: $gap-xl;
                     overflow: hidden;
                     max-height: 0;
                     @include transition(all, 0.5s, ease-out);
 
                     &--active {
-                        // display: block;
                         padding-top: $gap-sm;
-                        max-height: 500px;
+                        max-height: 1000px;
                     }
                 }
 

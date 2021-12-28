@@ -27,6 +27,7 @@
     border-radius: $rounded-xl;
     padding: $gap-sm $gap-md;
     font-size: $font-md;
+    z-index: 1;
 
     &:hover {
         transform: translateY(-3px);
