@@ -33,36 +33,16 @@ export const links = [
             },
             {
                 id:5,
-                text:'پست بلاگ ',
-                url:'/blog-post',
-            },
-            {
-                id:6,
                 text:'پزشکان ',
                 url:'/doctors',
             },
             {
-                id:7,
-                text:'توضیحات پزشک ',
-                url:'/doctor-single',
-            },
-            {
-                id:8,
-                text:'پکیج ها ',
-                url:'/plans',
-            },
-            {
-                id:9,
-                text:'توضیحات پکیج ',
-                url:'/single-plan',
-            },
-            {
-                id:10,
+                id:6,
                 text:' تماس با ما ',
                 url:'/contact',
             },
             {
-                id:11,
+                id:7,
                 text:' رزور ویزیت ',
                 url:'/reservation',
             },

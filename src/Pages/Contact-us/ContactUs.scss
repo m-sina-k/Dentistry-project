@@ -1,0 +1,80 @@
+@import '../../Style/Var';
+
+.contact-us {
+    &__contact-information {
+        padding: $gap-3xl 0;
+        background-color: $gray;
+        position: relative;
+        overflow: hidden;
+
+        .contact-us__text-container {
+            @include flex(center,unset,column);
+
+            .contact-info__list {
+                .contact__item {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: $gap-sm;
+
+                    .icon__container {
+                        margin-left: $gap-sm;
+                        padding: $gap-md;
+                        border-radius: $rounded-2xl;
+                        background-color: rgba($color: $white, $alpha: 0.8);
+
+                        .icon {
+                            font-size: $font-xl;
+                            color: $primary;
+                        }
+                    }
+
+                    &__text {
+
+                        .title {
+                            margin-bottom: $gap-sm;
+                        }
+
+                        a.description {
+                            @include transition(all, 0.3s, ease-in);
+                            color: $text-color;
+
+                            &:hover {
+                                font-weight: bold;
+                                color: $primary-shade;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .bg-shape--1 {
+            top: -150px;
+            right: -80px;
+        }
+
+        .bg-shape--2 {
+            bottom: -150px;
+            left: -80px;
+        }
+    }
+
+    .form__column {
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+
+        .contact-us__form-container {
+            position: static;
+        }
+    }
+}
+
+@include phone-md {
+    .contact-us {
+        &__contact-information {
+            padding: $gap-md 0;
+        }
+    }
+}

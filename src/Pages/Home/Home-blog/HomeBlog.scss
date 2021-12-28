@@ -25,10 +25,10 @@
 }
 
 @include phone-md {
-    .blog {
+    .home-blog {
         .posts__container {
             padding: $gap-md;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(90%, 1fr));
         }
     }
 }

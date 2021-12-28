@@ -3,7 +3,9 @@
 .hero {
     position: relative;
     margin-bottom: 12rem;
-
+&__content-container{
+    z-index: 1;
+}
     &__block {
         display: flex;
 

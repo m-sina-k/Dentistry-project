@@ -11,7 +11,7 @@
 
     &__image-container {
         z-index: 1;
-        padding-bottom: $gap-3xl;
+        padding-bottom: 10em;
         img:not(.bg-shape) {
             border-radius: $rounded-2xl;
             box-shadow: 0 0 15px rgba($color: $dark, $alpha: 0.3);

@@ -1,0 +1,84 @@
+@import '../../../Style/Var';
+
+.faq {
+    padding: $gap-3xl 0;
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 95%;
+
+        .title {
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .description {
+            max-width: 90%;
+            text-align: center;
+        }
+    }
+
+    &__box {
+        padding: $gap-xl $gap-2xl;
+        border-radius: $rounded-3xl;
+        width: max-content;
+        min-width: 60%;
+        max-width: 95%;
+        border: 2px solid $gray;
+        box-shadow: 0 4px 15px 0 rgba($color: $gray, $alpha: 0.5);
+        margin: $gap-md auto;
+
+        &__list {
+            &__item {
+                cursor: pointer;
+                border-bottom: 2px solid $gray;
+                padding: $gap-lg 0;
+
+                .icon__container {
+                    @include transition(background-color 0.3s, ease-in);
+                    padding: $gap-xxs;
+                    display: inline-flex;
+                    border-radius: $rounded-md;
+                    background-color: $gray;
+                    margin-left: $gap-sm;
+
+                    &--active {
+                        background-color: $primary;
+                        
+                    }
+
+                    .icon {
+                        @include transition(all, 0.3s, ease-in);
+                        font-size: $font-md;
+
+                        &--rotated {
+                            transform: rotate(-90deg);
+                            color: $white;
+                        }
+                    }
+                }
+
+                .answer {
+                    // margin-top: $gap-sm;
+                    // display: none;
+                    padding-left: $gap-xl;
+                    overflow: hidden;
+                    max-height: 0;
+                    @include transition(all, 0.5s, ease-out);
+
+                    &--active {
+                        // display: block;
+                        padding-top: $gap-sm;
+                        max-height: 500px;
+                    }
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

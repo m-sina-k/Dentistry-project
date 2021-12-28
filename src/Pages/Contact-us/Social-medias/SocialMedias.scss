@@ -1,0 +1,64 @@
+@import '../../../Style/Var';
+
+.social-medias {
+    background-color: $gray;
+    padding: $gap-3xl $gap-sm;
+position: relative;
+overflow: hidden;
+&__heading{
+    padding-top: 0; 
+}
+
+    .social__card-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        .social-media__card {
+            z-index: 1;
+            @include transition(all, 0.2s, ease-in);
+            border-radius: $rounded-xl;
+            background-color: $white;
+            padding: $gap-xl $gap-md;
+
+            .card__image {
+                border-radius: $rounded-xl;
+                box-shadow: 0 0 15px rgba($color: $primary-tint, $alpha: 0.3);
+                width: 65px;
+                height: 65px;
+            }
+
+            .card__description {
+                margin: $gap-md 0;
+            }
+
+            &:hover {
+                transform: translateY(-8px);
+                border: 1.5px solid $primary;
+            }
+        }
+    }
+    .bg-shape--1{
+        top: -80px;
+        right: -60px;
+    }
+    .bg-shape--2{
+        bottom: -80px;
+        left: -100px;
+    }
+}
+
+@include desktop-sm{
+    .social-medias{
+        .social__card-container{
+            grid-template-columns: repeat(2,1fr );
+        }
+    }
+}
+
+@include phone-md{
+    .social-medias{
+        .social__card-container{
+            grid-template-columns: 1fr;
+        }
+    }
+}

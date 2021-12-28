@@ -7,6 +7,7 @@ import Home from "./Pages/Home/Home";
 import Services from "./Pages/Services/Services";
 import AboutUs from "./Pages/About-us/AboutUs";
 import Blog from "./Pages/Blog/Blog";
+import ContactUs from './Pages/Contact-us/ContactUs';
 import Footer from "./Components/Footer/Footer";
 import Loading from "./Components/Loading/Loading";
 import { useGlobalContext } from "./Context/context";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/services" component={Services}/>
         <Route path="/about" component={AboutUs}/>
         <Route path="/blog" component={Blog}/>
+        <Route path="/contact" component={ContactUs}/>
       </Switch>
       <Footer />
     </Router>
