@@ -117,6 +117,14 @@
     content: ' \21C1' !important;
 }
 
+.Toastify__toast-container--top-center {
+    width:480px;
+    max-width:95%;
+}
+.toast__message{
+    font-family: $estedad-bold !important;
+
+}
 @include desktop-sm {
     .page__container {
         padding: $gap-sm $gap-2xl;

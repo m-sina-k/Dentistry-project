@@ -1,0 +1,92 @@
+@import "../../Style/Var";
+
+.reservation {
+  padding: $gap-3xl 0;
+  background-color: $gray;
+  position: relative;
+  overflow: hidden;
+  &__heading {
+    @include flex(center, center, column);
+    margin-bottom: $gap-lg;
+    .title {
+      text-align: center;
+      max-width: 450px;
+    }
+  }
+  &__form-container {
+    z-index: 1;
+    position: relative;
+    width: 750px;
+    max-width: 95%;
+    border-radius: $rounded-2xl;
+    background-color: $white;
+    box-shadow: $shadow-sm;
+    padding: $gap-xl;
+    @include flex(center, center, unset);
+    margin: 0 auto;
+
+    .reservation__form {
+      width: 100%;
+      display: grid;
+      grid-column-gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      .form__group {
+        // background-color: sienna;
+        margin-bottom: $gap-lg;
+        label {
+          display: block;
+          margin-bottom: $gap-sm;
+        }
+        .form__input {
+          width: 100%;
+          padding: $gap-xs $gap-sm;
+          border-radius: $rounded-lg;
+          border: 1px solid rgba($color: $dark, $alpha: 0.4);
+        }
+
+        &:nth-child(5) {
+          grid-column: 1 /-1;
+        }
+        // date picker input
+        .rmdp-container {
+          width: 100%;
+          height: 100%;
+        }
+        .rmdp-input {
+          width: 100%;
+          padding: 19px $gap-xs;
+          border-radius: $rounded-lg;
+        }
+
+        // service select input
+        .css-1s2u09g-control {
+          padding: 2px 0;
+          border-radius: $rounded-lg;
+        }
+      }
+      .form__submit {
+        grid-column: 1 /-1;
+      }
+    }
+  }
+  .bg-shape--1 {
+    top: -150px;
+    right: -80px;
+  }
+  .bg-shape--2 {
+    bottom: -150px;
+    left: -70px;
+  }
+}
+
+@include tablet-sm {
+  .reservation {
+    padding: $gap-xl 0;
+    &__form-container {
+      padding: $gap-lg;
+      .reservation__form {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

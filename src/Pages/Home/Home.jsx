@@ -6,6 +6,7 @@ import Hero from "./Hero/Hero";
 import ReservBanner from "../../Components/Reserv-banner/ReservBanner";
 import HomeServices from "./Home-services/HomeServices";
 import Testimonial from "./Testimonial/Testimonial";
+
 function Home() {
   return (
     <div className="home__wrapper">

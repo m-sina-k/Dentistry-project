@@ -48,7 +48,7 @@ function Header() {
               <FaPhoneAlt className="header-icon" />
             </a>
             <Link
-              to="/booking"
+              to="/reservation"
               className="button button--primary header-widget"
             >
               رزور ویزیت
