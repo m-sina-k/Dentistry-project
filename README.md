@@ -2,6 +2,8 @@
 
 a simple medical template to get started with react.js
 
+[live demo](https://velvety-daffodil-8af823.netlify.app)
+
 ---
 
 ![landing page](src/Assets/Images/screenshot.png)
